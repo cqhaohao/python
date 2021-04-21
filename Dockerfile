@@ -25,7 +25,7 @@ RUN set -ex \
     && mv /usr/bin/python /usr/bin/python27 \
     && mv /usr/bin/pip /usr/bin/pip27 \
     # 配置默认为python3
-    && ln -s /usr/local/python3/bin/python3.8 /usr/bin/python \
+    && ln -s /usr/local/python3/bin/python3.9 /usr/bin/python \
     && ln -s /usr/local/python3/bin/pip3 /usr/bin/pip
 # 修复因修改python版本导致yum失效问题
 RUN set -ex \
