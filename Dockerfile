@@ -8,15 +8,15 @@ FROM centos:7.6.1810
 MAINTAINER mioshu # 指定作者信息
 RUN set -ex \
     # 预安装所需组件
-    && yum install -y wget tar libffi-devel zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make initscripts \
-    && wget https://www.python.org/ftp/python/3.8.8/Python-3.8.8.tgz \
-    && tar -zxvf Python-3.8.8.tgz \
-    && cd Python-3.8.8 \
+    && yum install -y wget tar libffi-devel zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make initscripts git mesa-libGL.x86_64 xz-devel python-backports-lzma\
+    && wget https://www.python.org/ftp/python/3.9.4/Python-3.9.4.tgz \
+    && tar -zxvf Python-3.9.4.tgz \
+    && cd Python-3.9.4 \
     && ./configure prefix=/usr/local/python3 \
     && make \
     && make install \
     && make clean \
-    && rm -rf /Python-3.8.8* \
+    && rm -rf /Python-3.9.4* \
     && yum install -y epel-release \
     && yum install -y python-pip
 # 设置默认为python3
